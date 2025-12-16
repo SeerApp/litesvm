@@ -85,8 +85,12 @@ solana-transaction = { workspace = true, features = ["verify"] }
 solana-transaction-context.workspace = true
 solana-transaction-error.workspace = true
 thiserror.workspace = true
+<<<<<<< HEAD
 sha2 = { workspace = true, optional = true }
 hex = { workspace = true, optional = true }
+=======
+seer-core = { path = "../../../seer/seer-core/" }
+>>>>>>> ce1503e (Add instruction collection)
 
 [dev-dependencies]
 criterion.workspace = true
