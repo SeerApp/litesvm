@@ -35,7 +35,9 @@ pub(crate) fn process_message<'ix_data>(
                 TransactionError::InstructionError(top_level_instruction_index as u8, err)
             })?;
 
-        seer_core::get().start_instruction(top_level_instruction_index as u8);
+        seer_core::get(|seer| {
+            seer.start_instruction(top_level_instruction_index as u8, message.fee_payer().clone());
+        });
 
         let mut compute_units_consumed = 0;
         let result = if invoke_context.is_precompile(program_id) {
@@ -48,7 +50,9 @@ pub(crate) fn process_message<'ix_data>(
             invoke_context.process_instruction(&mut compute_units_consumed, execute_timings)
         };
 
-        seer_core::get().end_instruction();
+        seer_core::get(|seer| {
+            seer.end_instruction();
+        });
 
         *accumulated_consumed_units =
             accumulated_consumed_units.saturating_add(compute_units_consumed);
