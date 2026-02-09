@@ -77,6 +77,7 @@ solana-transaction-context.workspace = true
 solana-transaction-error.workspace = true
 thiserror.workspace = true
 seer-core = { path = "../../../seer/seer-core/" }
+seer-interface = { path = "../../../seer/seer-interface/" }
 
 [dev-dependencies]
 criterion.workspace = true

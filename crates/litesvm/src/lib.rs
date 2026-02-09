@@ -981,6 +981,10 @@ impl LiteSVM {
                     tx_result = Err(err);
                 };
 
+                seer_core::get(|seer| {
+                    unsafe { seer.end_transaction_context(); }
+                });
+
                 (
                     tx_result,
                     accumulated_consume_units,
