@@ -112,10 +112,6 @@ test-log.workspace = true
 [lints]
 workspace = true
 
-[[test]]
-name = "precompiles"
-required-features = ["precompiles"]
-
 [[bench]]
 name = "simple_bench"
 harness = false
