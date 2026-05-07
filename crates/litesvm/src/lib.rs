@@ -1204,7 +1204,7 @@ impl LiteSVM {
                 };
 
                 seer_core::get(|seer| {
-                    unsafe { seer.end_transaction_context(); }
+                    seer.close_account_backdoor();
                 });
 
                 (
