@@ -1495,6 +1495,10 @@ impl LiteSVM {
                 tx_result = tx_result
                     .and_then(|()| check_accounts_rent(tx, &context, &rent, &pre_rent_states));
 
+                seer_core::get(|seer| {
+                    seer.close_account_backdoor();
+                });
+
                 (
                     tx_result,
                     accumulated_consume_units,
