@@ -2640,7 +2640,7 @@ dependencies = [
  "nom",
  "qualifier_attr",
  "seer-core",
- "seer-interface",
+ "hooks",
  "serde",
  "sha2 0.10.9",
  "solana-account",
@@ -3961,7 +3961,7 @@ dependencies = [
  "regex",
  "reqwest",
  "rustc-demangle",
- "seer-interface",
+ "hooks",
  "serde",
  "serde_json",
  "serde_with",
@@ -3981,7 +3981,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "seer-interface"
+name = "hooks"
 version = "1.1.1"
 dependencies = [
  "solana-account",

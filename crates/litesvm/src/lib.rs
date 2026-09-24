@@ -1495,7 +1495,7 @@ impl LiteSVM {
                 tx_result = tx_result
                     .and_then(|()| check_accounts_rent(tx, &context, &rent, &pre_rent_states));
 
-                seer_interface::hooks().map(|h| (h.close_account_backdoor)());
+                hooks::get().map(|h| (h.close_account_backdoor)());
 
                 (
                     tx_result,

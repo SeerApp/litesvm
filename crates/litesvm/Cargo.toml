@@ -106,7 +106,7 @@ sha2 = { workspace = true, optional = true }
 hex = { workspace = true, optional = true }
 nom = { workspace = true, optional = true }
 wincode.workspace = true
-seer-interface = { path = "../../../seer/seer-interface/" }
+hooks = { path = "../../../seer/hooks/" }
 
 [dev-dependencies]
 criterion.workspace = true
